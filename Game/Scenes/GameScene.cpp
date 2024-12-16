@@ -3,6 +3,7 @@
 #include "ClearScene.h"
 
 #include "../Entities/Player/Player.h"
+#include "../Entities/Enemy/Enemy.h"
 
 GameScene::GameScene() {}
 GameScene::~GameScene() {}
@@ -10,6 +11,8 @@ GameScene::~GameScene() {}
 void GameScene::Initialize() {
 
 	entities_.push_back(std::make_unique<Player>());
+	entities_.push_back(std::make_unique<Enemy>());
+	entities_.push_back(std::make_unique<Enemy>());
 
 
 	for(auto& entity : entities_) {

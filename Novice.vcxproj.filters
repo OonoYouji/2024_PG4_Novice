@@ -50,6 +50,9 @@
     <ClCompile Include="Game\Entities\PlayerBullet\PlayerBullet.cpp">
       <Filter>KamataEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Entities\Enemy\Enemy.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -143,5 +146,6 @@
     <ClInclude Include="Game\Entities\IEntity\IEntity.h" />
     <ClInclude Include="Game\CustomMath\CustomVector2.h" />
     <ClInclude Include="Game\Entities\PlayerBullet\PlayerBullet.h" />
+    <ClInclude Include="Game\Entities\Enemy\Enemy.h" />
   </ItemGroup>
 </Project>
