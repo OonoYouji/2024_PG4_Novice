@@ -13,5 +13,5 @@ public:
 	void Draw()       override;
 
 private:
-
+	int titleSpriteHandle_ = 0;
 };

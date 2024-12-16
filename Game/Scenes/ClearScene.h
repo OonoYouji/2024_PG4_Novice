@@ -13,4 +13,6 @@ public:
 
 private:
 
+	int clearSpriteHandle_ = 0;
+
 };

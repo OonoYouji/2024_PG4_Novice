@@ -32,9 +32,6 @@ void GameScene::Initialize() {
 }
 
 void GameScene::Update() {
-	if(inputManager_->TriggerKey(DIK_RIGHTARROW)) {
-		sceneManager_->SetNextScene(new ClearScene());
-	}
 
 	collisionEntities_.clear();
 
@@ -60,9 +57,6 @@ void GameScene::Update() {
 }
 
 void GameScene::Draw() {
-
-	Novice::ScreenPrintf(0, 0, "GameScene");
-
 
 	for(auto& entity : entities_) {
 		entity->Draw();
