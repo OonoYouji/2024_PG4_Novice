@@ -1,5 +1,8 @@
 #pragma once
 
+/// engine
+#include <Novice.h>
+
 
 /// <summary>
 /// 入力の管理クラス

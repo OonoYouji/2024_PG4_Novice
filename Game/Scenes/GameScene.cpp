@@ -2,10 +2,19 @@
 
 #include "ClearScene.h"
 
+#include "../Entities/Player/Player.h"
+
 GameScene::GameScene() {}
 GameScene::~GameScene() {}
 
 void GameScene::Initialize() {
+
+	entities_.push_back(std::make_unique<Player>());
+
+
+	for(auto& entity : entities_) {
+		entity->Initialize();
+	}
 
 }
 
@@ -14,10 +23,20 @@ void GameScene::Update() {
 		sceneManager_->SetNextScene(new ClearScene());
 	}
 
+
+
+	for(auto& entity : entities_) {
+		entity->Update();
+	}
+
 }
 
 void GameScene::Draw() {
 
 	Novice::ScreenPrintf(0, 0, "GameScene");
 
+
+	for(auto& entity : entities_) {
+		entity->Draw();
+	}
 }

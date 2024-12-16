@@ -1,7 +1,5 @@
 #include "InputManager.h"
 
-#include <Novice.h>
-
 void InputManager::Initialize() {
 
 }

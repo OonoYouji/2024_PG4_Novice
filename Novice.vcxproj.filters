@@ -38,6 +38,15 @@
     <ClCompile Include="Game\InputManager\InputManager.cpp">
       <Filter>KamataEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Entities\Player\Player.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Entities\IEntity\IEntity.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\CustomMath\CustomVector2.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -127,5 +136,8 @@
     <ClInclude Include="Game\Scenes\IScene\IScene.h" />
     <ClInclude Include="Game\Scenes\SceneManager\SceneManager.h" />
     <ClInclude Include="Game\InputManager\InputManager.h" />
+    <ClInclude Include="Game\Entities\Player\Player.h" />
+    <ClInclude Include="Game\Entities\IEntity\IEntity.h" />
+    <ClInclude Include="Game\CustomMath\CustomVector2.h" />
   </ItemGroup>
 </Project>
