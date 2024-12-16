@@ -1,5 +1,7 @@
 #include "ClearScene.h"
 
+#include "TitleScene.h"
+
 
 ClearScene::ClearScene() {}
 ClearScene::~ClearScene() {}
@@ -10,6 +12,9 @@ void ClearScene::Initialize() {
 }
 
 void ClearScene::Update() {
+	if(inputManager_->TriggerKey(DIK_RIGHTARROW)) {
+		sceneManager_->SetNextScene(new TitleScene());
+	}
 
 }
 

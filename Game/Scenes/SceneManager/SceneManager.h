@@ -6,7 +6,9 @@
 
 
 /// user
-#include "../IScene/IScene.h"
+//#include "../IScene/IScene.h"
+
+class IScene;
 
 /// <summary>
 /// シーンの管理クラス

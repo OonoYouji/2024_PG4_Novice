@@ -1,5 +1,7 @@
 #include "SceneManager.h"
 
+#include "../IScene/IScene.h"
+
 void SceneManager::Initialize() {}
 
 void SceneManager::Update() {
