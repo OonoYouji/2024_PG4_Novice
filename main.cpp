@@ -4,6 +4,8 @@
 #include "Game/Scenes/SceneManager/SceneManager.h"
 #include "Game/InputManager/InputManager.h"
 
+#include "Game/Scenes/TitleScene.h"
+
 const char kWindowTitle[] = "LE2A_04_オオノ_ヨウジ_PG3_04_01";
 
 // Windowsアプリでのエントリーポイント(main関数)
@@ -18,6 +20,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	sceneManager->Initialize();
 	inputManager->Initialize();
+
+	sceneManager->SetNextScene(new TitleScene());
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {

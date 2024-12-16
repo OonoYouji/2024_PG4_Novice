@@ -1,8 +1,6 @@
 #include "InputManager.h"
 
-/// engine
 #include <Novice.h>
-
 
 void InputManager::Initialize() {
 

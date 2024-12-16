@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Novice.h>
+
 
 /// <summary>
 /// シーンのインターフェイスクラス

@@ -13,4 +13,6 @@ void GameScene::Update() {
 
 void GameScene::Draw() {
 
+	Novice::ScreenPrintf(0, 0, "GameScene");
+
 }
