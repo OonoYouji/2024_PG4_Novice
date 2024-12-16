@@ -9,6 +9,8 @@ Player::Player() {}
 Player::~Player() {}
 
 void Player::Initialize() {
+	SetTag("Player");
+
 
 	inputManager_ = InputManager::GetInstance();
 

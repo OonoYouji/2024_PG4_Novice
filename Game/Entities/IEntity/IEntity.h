@@ -1,5 +1,8 @@
 #pragma once
 
+/// std
+#include <string>
+
 #include "../../CustomMath/CustomVector2.h"
 
 /// <summary>
@@ -14,10 +17,14 @@ public:
 	virtual void Update()     = 0;
 	virtual void Draw()       = 0;
 
+	virtual void OnCollision(IEntity*) {}
+
 protected:
 
-	Vector2 position_;
-	float   radius_;
+	std::string tag_ = "none";
+
+	Vector2     position_;
+	float       radius_;
 
 public:
 
@@ -54,5 +61,25 @@ public:
 	float GetRadius() const {
 		return radius_;
 	}
+
+
+
+	/// <summary>
+	/// タグの設定
+	/// </summary>
+	/// <param name="_tag"></param>
+	void SetTag(const std::string& _tag) {
+		tag_ = _tag;
+	}
+
+	/// <summary>
+	/// タグの取得
+	/// </summary>
+	/// <returns></returns>
+	const std::string& GetTag() const {
+		return tag_;
+	}
+
+
 
 };

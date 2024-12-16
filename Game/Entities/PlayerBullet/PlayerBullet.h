@@ -13,6 +13,9 @@ public:
 	void Update()     override;
 	void Draw()       override;
 
+	void OnCollision(IEntity* _other) override;
+
+
 	/// <summary>
 	/// スタートアップ関数
 	/// </summary>

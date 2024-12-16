@@ -7,7 +7,9 @@ Enemy::Enemy() {}
 Enemy::~Enemy() {}
 
 void Enemy::Initialize() {
-	maxHp_    = 10;
+	SetTag("Enemy");
+
+	maxHp_    = 100;
 	hp_       = maxHp_;
 	position_ = Vector2(640.0f, 360.0f - 200.0f);
 	radius_   = 45.0f;
@@ -51,4 +53,20 @@ void Enemy::Draw() {
 	);
 
 
+
+	Novice::ScreenPrintf(
+		static_cast<int>(prevPosition_.x - (radius_ * 0.5f)),
+		static_cast<int>(prevPosition_.y - radius_),
+		"HP: %d/%d", hp_, maxHp_
+	);
+
+}
+
+void Enemy::OnCollision(IEntity* _other) {
+	if(_other->GetTag() == "PlayerBullet") {
+		hp_--;
+		if(hp_ <= 0) {
+			isAlive_ = false;
+		}
+	}
 }

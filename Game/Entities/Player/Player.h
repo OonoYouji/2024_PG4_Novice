@@ -51,6 +51,15 @@ private:
 	int shootCTFrame_;
 	int maxShootCTFrame_;
 
+public:
+
+	/// <summary>
+	/// 弾の取得
+	/// </summary>
+	/// <returns></returns>
+	const std::vector<std::unique_ptr<class PlayerBullet>>& GetBullets() const {
+		return bullets_;
+	}
 
 };
 

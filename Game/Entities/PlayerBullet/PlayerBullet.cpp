@@ -11,6 +11,7 @@ void PlayerBullet::Initialize() {
 
 	isAlive_ = true;
 
+	SetTag("PlayerBullet");
 }
 
 void PlayerBullet::Update() {
@@ -34,6 +35,12 @@ void PlayerBullet::Draw() {
 		0, 0xffffffff, kFillModeSolid
 	);
 
+}
+
+void PlayerBullet::OnCollision(IEntity* _other) {
+	if(_other->GetTag() == "Enemy") {
+		isAlive_ = false;
+	}
 }
 
 
