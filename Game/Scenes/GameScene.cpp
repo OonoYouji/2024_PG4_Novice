@@ -1,30 +1,33 @@
 #include "GameScene.h"
 
-#include <cassert>
-
-#include "ClearScene.h"
-
-#include "../Entities/Player/Player.h"
-#include "../Entities/Enemy/Enemy.h"
-#include "../Entities/PlayerBullet/PlayerBullet.h"
 
 GameScene::GameScene() {}
 GameScene::~GameScene() {}
 
 void GameScene::Initialize() {
 
+	player_.reset(new Player());
+	player_->Initialize();
 
+	inputHandler_ = std::make_unique<InputHandler>();
+	inputHandler_->AssingRightMoveCommandToPressKeyD();
+	inputHandler_->AssingLeftMoveCommandToPressKeyA();
 
+	iCommand_ = nullptr;
 }
 
 void GameScene::Update() {
 
-	
+	iCommand_ = inputHandler_->HandleInput();
+	if(iCommand_ != nullptr) {
+		iCommand_->Execute(*player_);
+	}
 
+	player_->Update();
 }
 
 void GameScene::Draw() {
 
-
+	player_->Draw();
 }
 
