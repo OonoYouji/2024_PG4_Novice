@@ -13,76 +13,18 @@ GameScene::~GameScene() {}
 
 void GameScene::Initialize() {
 
-	entities_.push_back(std::make_unique<Player>());
-	entities_.push_back(std::make_unique<Enemy>());
 
-	player_ = dynamic_cast<Player*>(entities_[0].get());
-	enemy_  = dynamic_cast<Enemy*>(entities_[1].get());
-
-	/// nullptrチェック
-	assert(player_);
-	assert(enemy_);
-
-
-	for(auto& entity : entities_) {
-		entity->Initialize();
-		collisionEntities_.push_back(entity.get());
-	}
 
 }
 
 void GameScene::Update() {
 
-	collisionEntities_.clear();
-
-	for(auto& entity : entities_) {
-		entity->Update();
-		collisionEntities_.push_back(entity.get());
-	}
-
-	if(player_) {
-		for(auto& bullet : player_->GetBullets()) {
-			collisionEntities_.push_back(bullet.get());
-		}
-	}
-
-	CollisionALL();
-
-
-	if(!enemy_->GetIsAlive()) {
-		sceneManager_->SetNextScene(new ClearScene());
-	}
-
+	
 
 }
 
 void GameScene::Draw() {
 
-	for(auto& entity : entities_) {
-		entity->Draw();
-	}
+
 }
 
-void GameScene::CollisionALL() {
-
-
-	for(auto& entityA : collisionEntities_) {
-		for(auto& entityB : collisionEntities_) {
-
-			/// 同じエンティティ同士は判定しない
-			if(entityA == entityB) {
-				continue;
-			}
-
-			Vector2 distance  = entityA->GetPosition() - entityB->GetPosition();
-			float   addRadius = entityA->GetRadius() + entityB->GetRadius();
-
-			/// 当たり判定のチェック
-			if(Lenght(distance) < addRadius) {
-				entityA->OnCollision(entityB);
-				entityB->OnCollision(entityA);
-			}
-
-		}
-	}
-}
