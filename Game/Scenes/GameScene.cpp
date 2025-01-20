@@ -11,6 +11,9 @@ GameScene::~GameScene() {}
 
 void GameScene::Initialize() {
 
+
+	/// multi threadでの読み込みを行う
+
 	
 }
 
