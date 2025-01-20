@@ -44,6 +44,9 @@
     <ClCompile Include="Game\CustomMath\LoadCSV.cpp">
       <Filter>KamataEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Game\CustomMath\MultiThreadLoader.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -135,5 +138,6 @@
     <ClInclude Include="Game\InputManager\InputManager.h" />
     <ClInclude Include="Game\CustomMath\CustomVector2.h" />
     <ClInclude Include="Game\CustomMath\LoadCSV.h" />
+    <ClInclude Include="Game\CustomMath\MultiThreadLoader.h" />
   </ItemGroup>
 </Project>
