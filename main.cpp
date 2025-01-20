@@ -4,7 +4,7 @@
 #include "Game/Scenes/SceneManager/SceneManager.h"
 #include "Game/InputManager/InputManager.h"
 
-#include "Game/Scenes/TitleScene.h"
+#include "Game/Scenes/GameScene.h"
 
 const char kWindowTitle[] = "LE2A_04_オオノ_ヨウジ_PG3_04_01";
 
@@ -21,7 +21,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	sceneManager->Initialize();
 	inputManager->Initialize();
 
-	sceneManager->SetNextScene(new TitleScene());
+	sceneManager->SetNextScene(new GameScene());
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
