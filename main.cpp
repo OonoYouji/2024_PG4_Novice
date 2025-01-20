@@ -6,7 +6,7 @@
 
 #include "Game/Scenes/GameScene.h"
 
-const char kWindowTitle[] = "LE2A_04_オオノ_ヨウジ_PG3_04_01";
+const char kWindowTitle[] = "LE2A_04_オオノ_ヨウジ_PG3_06_03";
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
