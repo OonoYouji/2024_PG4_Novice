@@ -112,6 +112,7 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="Game\Command\Commands\MoveLeftCommand.cpp" />
     <ClCompile Include="Game\Command\Commands\MoveRightCommand.cpp" />
     <ClCompile Include="Game\Command\Commands\StageScene\SelectorCommand.cpp" />
+    <ClCompile Include="Game\Command\Commands\StageScene\StageSceneInputHandler.cpp" />
     <ClCompile Include="Game\Command\Commands\StageScene\UnitCommand.cpp" />
     <ClCompile Include="Game\Command\InputHandler\InputHandler.cpp" />
     <ClCompile Include="Game\CustomMath\CustomVector2.cpp" />
@@ -157,6 +158,7 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="Game\Command\Commands\MoveLeftCommand.h" />
     <ClInclude Include="Game\Command\Commands\MoveRightCommand.h" />
     <ClInclude Include="Game\Command\Commands\StageScene\SelectorCommand.h" />
+    <ClInclude Include="Game\Command\Commands\StageScene\StageSceneInputHandler.h" />
     <ClInclude Include="Game\Command\Commands\StageScene\UnitCommand.h" />
     <ClInclude Include="Game\Command\InputHandler\InputHandler.h" />
     <ClInclude Include="Game\Command\ICommand\ICommand.h" />

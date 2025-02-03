@@ -1,29 +1,28 @@
 #pragma once
 
 /// std
-#include <vector>
 #include <list>
 #include <memory>
+#include <vector>
 
+/// user
+#include "../Command/Commands/StageScene/StageSceneInputHandler.h"
 #include "IScene/IScene.h"
-#include "../Entities/Player/Player.h"
-
-#include "../Command/InputHandler/InputHandler.h"
 
 class GameScene final : public IScene {
 public:
-
 	GameScene();
 	~GameScene();
 
 	void Initialize() override;
-	void Update()     override;
-	void Draw()       override;
+	void Update() override;
+	void Draw() override;
 
 private:
+	std::unique_ptr<StageSceneInputHandler>  inputHandler_;
+	IStageSceneCommand*                      command_;
+	std::list<IStageSceneCommand*>           commandHistory_;
+	std::list<IStageSceneCommand*>::iterator commandHistoryItr_;
 
-	std::unique_ptr<Player>       player_;
-	std::unique_ptr<InputHandler> inputHandler_;
-	ICommand*                     iCommand_;
-
+	Selector*                                selector_;
 };

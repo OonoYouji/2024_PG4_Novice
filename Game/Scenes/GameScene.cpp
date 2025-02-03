@@ -1,33 +1,26 @@
 #include "GameScene.h"
 
-
 GameScene::GameScene() {}
 GameScene::~GameScene() {}
 
 void GameScene::Initialize() {
+	inputHandler_ = std::make_unique<StageSceneInputHandler>();
 
-	player_.reset(new Player());
-	player_->Initialize();
-
-	inputHandler_ = std::make_unique<InputHandler>();
-	inputHandler_->AssingRightMoveCommandToPressKeyD();
-	inputHandler_->AssingLeftMoveCommandToPressKeyA();
-
-	iCommand_ = nullptr;
+	//selector_->Initialize();
 }
 
 void GameScene::Update() {
 
-	iCommand_ = inputHandler_->HandleInput();
-	if(iCommand_ != nullptr) {
-		iCommand_->Execute(*player_);
+	/// update key state
+	inputHandler_->UpdateKeyState();
+
+	/// get command type
+	if (selector_->GetSelectMode() == SELECTOR) {
+		command_ = inputHandler_->SelectHandleInput(selector_);
+	} else if (selector_->GetSelectMode() == UNIT) {
+		command_ = inputHandler_->UnitHandleInput(selector_->GetSelectedUnitAddress());
 	}
 
-	player_->Update();
 }
 
-void GameScene::Draw() {
-
-	player_->Draw();
-}
-
+void GameScene::Draw() {}
